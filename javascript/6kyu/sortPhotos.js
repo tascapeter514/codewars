@@ -42,40 +42,52 @@
 //     return lastFive
 // }
 
-function sortPhotos(pics) {
+// function sortPhotos(pics) {
 
-    let sort = pics.sort((firstPic, secondPic) => {
+//     let sort = pics.sort((firstPic, secondPic) => {
         
-        let firstPicYear = parseInt(firstPic.slice(0, 4))
-        let secondPicYear = parseInt(secondPic.slice(0, 4))
-        if (firstPicYear > secondPicYear) {
-            return 1
-        } else if (firstPicYear < secondPicYear) {
-            return -1
-        } else {
-            let firstImg = parseInt(firstPic.slice(8))
-            let secondImg = parseInt(secondPic.slice(8))
-            return firstImg > secondImg ? 1 : -1
+//         let firstPicYear = parseInt(firstPic.slice(0, 4))
+//         let secondPicYear = parseInt(secondPic.slice(0, 4))
+//         if (firstPicYear > secondPicYear) {
+//             return 1
+//         } else if (firstPicYear < secondPicYear) {
+//             return -1
+//         } else {
+//             let firstImg = parseInt(firstPic.slice(8))
+//             let secondImg = parseInt(secondPic.slice(8))
+//             return firstImg > secondImg ? 1 : -1
             
-        }
-    })
+//         }
+//     })
     
-    const lastFive = sort.slice(-5)
-    let lastPhoto = lastFive.slice(lastFive.length - 1)[0];
-    const splitPhoto = lastPhoto.split('.img');
-    let finalPhoto = splitPhoto[0] + '.img' + (parseInt(splitPhoto[1])+ 1) 
-    lastFive.push(finalPhoto)
-    return lastFive
-}
+//     const lastFive = sort.slice(-5)
+//     let lastPhoto = lastFive.slice(lastFive.length - 1)[0];
+//     const splitPhoto = lastPhoto.split('.img');
+//     let finalPhoto = splitPhoto[0] + '.img' + (parseInt(splitPhoto[1])+ 1) 
+//     lastFive.push(finalPhoto)
+//     return lastFive
+// }
 
 const firstPhotos = ["2016.img1","2016.img2","2015.img3","2016.img4","2013.img5"]
 const secondPHotos = ["2016.img1"]
 // const testCase = ["2016.img4","2016.img5","2016.img1","2016.img3","2016.img2"]
-// const testCase = ["2016.img1","2013.img3","2016.img2","2015.img3","2012.img7","2016.img4","2013.img5"]
+const testCase = ["2016.img1","2013.img3","2016.img2","2015.img3","2012.img7","2016.img4","2013.img5"]
 //["2013.img5","2015.img3","2016.img1","2016.img2","2016.img4","2016.img5"]
-const testCase = ["2016.img7","2016.img2","2016.img3","2015.img3","2012.img8","2016.img4","2016.img5"]
+// const testCase = ["2016.img7","2016.img2","2016.img3","2015.img3","2012.img8","2016.img4","2016.img5"]
 //["2016.img2","2016.img3","2016.img4","2016.img5","2016.img7","2016.img8"]
 
+
+function sortPhotos(pics) {
+    pics = pics.map(s => s.split('.img'))
+            .sort((a, b) => +a[0] - b[0] || +a[1]-b[1])
+            .slice(-5)
+    let [last, n] = pics[pics.length - 1]
+    pics.push([last, +n+1])
+    return pics
+    
+    
+
+}
 
 console.log(sortPhotos(testCase))
 // sortPhotos(testCase)
