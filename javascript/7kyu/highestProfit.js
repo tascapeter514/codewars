@@ -33,7 +33,7 @@ function minMax(arr) {
 
 //codewars solution
 function findMinMax(arr) {
-    return [Math.min(arr), Math.max(...arr)]
+    return [Math.min(...arr), Math.max(...arr)]
 }
 
 console.log(findMinMax(testCase))
