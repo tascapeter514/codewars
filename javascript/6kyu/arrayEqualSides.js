@@ -34,14 +34,14 @@ const testThree = [20,10,-80,10,10,15,35]
 
 // MY SOLUTION
 function findEvenIndex(arr) {
-    let leftArr = []
+    let leftArr = [];
     for (let i = 0; i <= arr.length - 1; i++) {
-        let rightArr = arr.slice(i)
-        leftArr.push(arr[i])
+        let rightArr = arr.slice(i);
+        leftArr.push(arr[i]);
         // console.log("rightArr:", rightArr)
         // console.log('leftArr:', leftArr)
-        let rightSum = rightArr.reduce((acc, curr) => acc += curr)
-        let leftSum = leftArr.reduce((acc, curr) => acc += curr)
+        let rightSum = rightArr.reduce((acc, curr) => acc += curr);
+        let leftSum = leftArr.reduce((acc, curr) => acc += curr);
         // console.log('right sum:', rightSum, 'left sum:', leftSum)
         if (rightSum === leftSum) {
             return i
