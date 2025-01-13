@@ -18,7 +18,7 @@ function sortArray(array) {
     let odds = array.filter(el => el % 2 != 0).sort((a, b) => a - b)
     for (let i = 0; i < array.length; i++) {
         let curr = array[i]
-        if (curr % 2 != 0) {
+        if (curr % 2) {
             array.splice(i, 1, odds.shift())
         }
     }
