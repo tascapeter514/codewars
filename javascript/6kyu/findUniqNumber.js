@@ -22,7 +22,7 @@ const sixthTest = [ 3, 10, 3, 3, 3 ]; // 10
 
 
 
-
+// MY SOLUTION
 function findUniq(arr) {
 
     let [result] = arr.filter((num) => arr.indexOf(num) == arr.lastIndexOf(num))
