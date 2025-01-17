@@ -44,17 +44,3 @@ function twoSum(numbers, target) {
 //         }
 //     }
 // }
-
-// TWO SUM TECHNIQUE
-function twoPointers(numbers, target) {
-    let left = 0;
-    let right = numbers.length - 1;
-    numbers = numbers.sort((a, b) => a - b)
-    console.log(numbers)
-    // while (left < right) {
-    //     const curr = numbers[left] + numbers[right];
-    //     if (curr < target) {
-
-    //     }
-    // }
-}
